@@ -4,7 +4,7 @@ const path = require('path');
 const hbs = require('hbs');
 const session = require('express-session');
 const mongoose = require('mongoose');
-const Register = require("./models/registers");
+const Register = require("./src/models/registers");
 
 app.use(session({
   secret: 'your-secret-key',
@@ -12,7 +12,7 @@ app.use(session({
   saveUninitialized: true
 }));
 
-const { connectdb } = require("./db/conn");
+const { connectdb } = require("./src/db/conn");
 connectdb();
 
 const port = 4004;
